@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^4.1.0",
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.11.19",
     "object-hash": "^2.1.1"
   }
 }

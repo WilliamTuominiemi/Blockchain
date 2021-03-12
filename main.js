@@ -1,33 +1,24 @@
-let BlockChain = require("./blockchain/blockChain")
+let database = require("./src/database/")
+database.onConnect(() => {
+    
 
-let blockChain = new BlockChain()
+    let BlockChain = require("./src/blockChain")
 
-let hash = require('object-hash')
+    let blockChain = new BlockChain()
 
-let PROOF = 420
+    let hash = require('object-hash')
 
-let validProof = (proof) => {
-    let guessHash = hash(proof)
-    console.log("Hashing: ", guessHash)
-    return guessHash === hash(PROOF)
-}
+    let PROOF = 420
 
-let proofOfWork = () => {
-    let proof = 0;
-    while(true) {
-        if(!validProof(proof))  {
-            proof++
-        }   else    {
-            break
-        }
-    }
-    return proof
-}
+    // if(proofOfWork() === PROOF) {
+    //     blockChain.addNewTransaction("William", "Plug", 1)
+    //     let prevHash = blockChain.lastBlock() ? blockChain.lastBlock.hash : null
+    //     blockChain.addNewBlock(prevHash)
+    // }
 
-if(proofOfWork() === PROOF) {
-    blockChain.addNewTransaction("William", "Plug", 1)
-    let prevHash = blockChain.lastBlock() ? blockChain.lastBlock.hash : null
-    blockChain.addNewBlock(prevHash)
-}
+    blockChain.addNewTransaction("William", "Plug", 2)
+    blockChain.addNewBlock(null)
 
-console.log("Chain : ", blockChain.chain)
+    console.log("Chain : ", blockChain.chain)
+
+})
