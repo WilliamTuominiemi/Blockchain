@@ -10,14 +10,7 @@ database.onConnect(() => {
 
     let PROOF = 420
 
-    // if(proofOfWork() === PROOF) {
-    //     blockChain.addNewTransaction("William", "Plug", 1)
-    //     let prevHash = blockChain.lastBlock() ? blockChain.lastBlock.hash : null
-    //     blockChain.addNewBlock(prevHash)
-    // }
-
-    blockChain.addNewTransaction("William", "Plug", 2)
-    blockChain.addNewBlock(null)
+    blockChain.addNewTransaction("William", "Pog", 2)
 
     console.log("Chain : ", blockChain.chain)
 

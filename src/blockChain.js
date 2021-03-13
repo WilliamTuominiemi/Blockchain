@@ -52,7 +52,7 @@ class BlockChain {
     
                 //Hash
                 this.hash = hash(block)
-    
+     
                 //Add to chain
                 this.chain.push(block)
                 this.curr_transactions = []
@@ -62,7 +62,7 @@ class BlockChain {
     }
 
     addNewTransaction(sender, recipient, amount) {
-        this.curr_transactions.push({sender, recipient, amount})
+        this.curr_transactions.push({sender, recipient, amount})n
     }
 
     lastBlock() {
